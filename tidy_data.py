@@ -19,4 +19,8 @@ df = df.rename(
     }
 )
 
-df.head()
+# Replace missing values
+df = df.replace(".", "")
+
+# Write modified dataframe to file
+df.to_csv("results.csv", index=False)
