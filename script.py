@@ -34,22 +34,43 @@ sns.set_palette("PiYG")
 # calculate and print boxplots to files
 fig, axes = plt.subplots(figsize=(10, 15))
 fig.suptitle("Nasjonale prøver 5. trinn, spredning i resultater")
-sns.boxplot(data=femte_trinn_engelsk, x="verdi", y="enhetsnavn", palette="Spectral")
+sns.boxplot(data=femte_trinn_engelsk, x="verdi", y="enhetsnavn", palette="RdYlBu")
+sns.stripplot(
+    data=femte_trinn_engelsk,
+    x="verdi",
+    y="enhetsnavn",
+    palette="PRGn",
+    hue="periode",
+)
 axes.set_title("Engelsk")
 plt.savefig("plots/boxplot_femte_trinn_engelsk.png")
 
 fig, axes = plt.subplots(figsize=(10, 15))
 fig.suptitle("Nasjonale prøver 5. trinn, spredning i resultater")
-sns.boxplot(data=femte_trinn_lesing, x="verdi", y="enhetsnavn", palette="Spectral")
+sns.boxplot(data=femte_trinn_lesing, x="verdi", y="enhetsnavn", palette="RdYlBu")
+sns.stripplot(
+    data=femte_trinn_lesing,
+    x="verdi",
+    y="enhetsnavn",
+    palette="PRGn",
+    hue="periode",
+)
 axes.set_title("Lesing")
 plt.savefig("plots/boxplot_femte_trinn_lesing.png")
 
 fig, axes = plt.subplots(figsize=(10, 15))
 fig.suptitle("Nasjonale prøver 5. trinn, spredning i resultater")
-sns.boxplot(data=femte_trinn_regning, x="verdi", y="enhetsnavn", palette="Spectral")
+sns.boxplot(data=femte_trinn_regning, x="verdi", y="enhetsnavn", palette="RdYlBu")
+sns.stripplot(
+    data=femte_trinn_regning,
+    x="verdi",
+    y="enhetsnavn",
+    palette="PRGn",
+    hue="periode",
+)
 axes.set_title("Regning")
 plt.savefig("plots/boxplot_femte_trinn_regning.png")
-sns.despine(offset=10, trim=True)
+# sns.despine(offset=10, trim=True)
 
 
 plt.show()
