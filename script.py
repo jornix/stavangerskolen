@@ -6,6 +6,7 @@ import seaborn as sns
 df = pd.read_csv("results.csv")
 df.drop(["index"], axis=1).reset_index(drop=True)
 
+
 # Separate fifth grade tests
 femte_trinn = df[
     (df["statistikk"] == "Nasjonale prøver 5. trinn") & (pd.isna(df["verdi"]) == False)
