@@ -13,14 +13,14 @@ gutter_8 = pd.read_csv("gutter_8.csv")
 jenter_8 = pd.read_csv("jenter_8.csv")
 jenter_gutter_8 = pd.concat([gutter_8, jenter_8]).reset_index(drop=True)
 
-# Save tables to excel file
+# Save tables to excel file, for the heck of it
 begge_kjonn_9 = pd.read_csv("begge_kjonn_9.csv")
 gutter_9 = pd.read_csv("gutter_9.csv")
 jenter_9 = pd.read_csv("jenter_9.csv")
 jenter_gutter_9 = pd.concat([gutter_9, jenter_9]).reset_index(drop=True)
 jenter_gutter_9
 
-income_sheets = {
+resultater_sheets = {
     "5. trinn, begge kjønn": begge_kjonn_5,
     "5. trinn, gutter og jenter": jenter_gutter_5,
     "8. trinn, begge kjønn": begge_kjonn_8,
@@ -30,7 +30,7 @@ income_sheets = {
 }
 writer = pd.ExcelWriter("./tabeller.xlsx", engine="xlsxwriter")
 
-for sheet_name in income_sheets.keys():
+for sheet_name in resultater_sheets.keys():
     income_sheets[sheet_name].to_excel(writer, sheet_name=sheet_name, index=False)
 writer.save()
 
